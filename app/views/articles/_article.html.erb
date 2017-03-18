@@ -8,14 +8,22 @@
         <div class="article-body">
           <%= truncate(article.description, length: 100) %>
         </div>
-        <div class="article-actions">
-          <small>Author: <%= article.user.username if article.user %><br/>
-            Published: <%= article.created_at.to_formatted_s(:short) %></small><br/><br/>
-          <%= link_to "Edit", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-          <%= link_to "Delete", article_path(article), method: :delete,
-                                data: { confirm: "Are you sure you want to delete the article?" },
-                                class: "btn btn-xs btn-danger" %>
-        </div>
+          <div class="article-footer">
+            <div class="article-author">
+              <small>
+                Author: <%= article.user.username if article.user %><br/>
+                Published: <%= article.created_at.to_formatted_s(:short) %>
+              </small>
+            </div>
+            <% if logged_in? && current_user = article.user %>
+              <div>
+                <%= link_to "Edit", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+                <%= link_to "Delete", article_path(article), method: :delete,
+                                      data: { confirm: "Are you sure you want to delete the article?" },
+                                      class: "btn btn-xs btn-danger" %>
+              </div>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>

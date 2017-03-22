@@ -87,3 +87,25 @@ footer a:hover {
 .navbar.navbar-default li a {
     color: white;
 }
+
+.navbar.navbar-default li a:hover {
+    color: black;
+}
+
+.navbar.navbar-default li a:press {
+    color: black;
+}
+
+.dropdown-menu li a {
+  color: black !important;
+}
+
+.dropdown-menu li a:hover {
+  color: white !important;
+  background: #3B5998 !important;
+}
+
+dropdown-toggle:active, .open .dropdown-toggle {
+  background: #3B5998 !important;
+  color: black !important;
+}

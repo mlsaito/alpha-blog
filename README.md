@@ -7,4 +7,8 @@ Steps to set-up the app and run:
 3. rake db:migrate
 4. rails server
 
+You can check the deployed version of this application here:
+
+https://glarewind.herokuapp.com/
+
 Enjoy!
